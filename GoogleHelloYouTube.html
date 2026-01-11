@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        
+        .container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        
+        .ball {
+            width: 120px;
+            height: 120px;
+            background: #ff0000;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: roll 2s forwards, fadeOutBall 1s 2s forwards;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .ball-text {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeInText 1s 1s forwards;
+        }
+        
+        .youtube-box {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 160px;
+            height: 110px;
+            background: #ff0000;
+            border-radius: 25px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            animation: fadeInBox 0.5s 2s forwards;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .youtube-box:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+        
+        .triangle-container {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: triangleDrop 1s 2.5s forwards, triangleBounce 0.5s 3.5s forwards;
+        }
+        
+        .triangle {
+            width: 0;
+            height: 0;
+            border-top: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+            border-left: 40px solid white;
+        }
+        
+        .google-text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, 80px);
+            font-size: 24px;
+            color: #ffffff;
+            opacity: 0;
+            animation: fadeInGoogle 1.5s 2s forwards;
+        }
+        
+        @keyframes roll {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        @keyframes fadeOutBall {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInBox {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        
+        @keyframes triangleDrop {
+            0% {
+                top: -60px;
+                transform: translateX(-50%) rotate(0deg);
+            }
+            80% {
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%) rotate(10deg);
+            }
+            100% {
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+        }
+        
+        @keyframes triangleBounce {
+            0% {
+                transform: translateX(-50%) translateY(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-60%) scale(1.1);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) scale(1);
+            }
+        }
+        
+        @keyframes fadeInGoogle {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball">
+            <div class="ball-text">YouTube</div>
+        </div>
+        <a href="https://m.youtube.com" target="_blank" class="youtube-box">
+            <div class="triangle-container">
+                <div class="triangle"></div>
+            </div>
+        </a>
+        <div class="google-text">Google Inc.</div>
+    </div>
+
+    <script>
+        document.querySelector('.youtube-box').addEventListener('click', function(e) {
+            console.log('打开YouTube网站');
+        });
+    </script>
+</body>
+</html>
