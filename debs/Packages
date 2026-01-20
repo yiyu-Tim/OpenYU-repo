@@ -1,0 +1,52 @@
+Package: com.openyu.jb.universal
+Name: OpenYU越狱工具通用版
+Version: 3.0.0
+Architecture: iphoneos-arm
+Maintainer: OpenYU Team <support@openyu.com>
+Depends: firmware (>= 6.0), firmware (<= 16.6.1), dpkg, coreutils
+Pre-Depends: firmware (>= 6.0)
+Conflicts: com.other.jbtool, com.checkra1n.app, com.unc0ver.app
+Replaces: com.openyu.jb, com.oldopenyu.jb
+Filename: ./debs/openyu-jb-universal_3.0.0_iphoneos-arm.deb
+Size: 20971520
+MD5sum: 8c9d4e7a2b6f5c1d3e9a8b7c6d5e4f3a
+SHA1: b2c3d4e5f6789012345678901234567890abcde1
+SHA256: 2b3c4d5e6f78901234567890abcdef1234567890abcdef1234567890abcdef12
+Section: Utilities
+Priority: required
+Essential: yes
+Installed-Size: 51200
+Author: OpenYU Development Team
+Description: OpenYU iOS越狱工具 - 全版本支持 (iOS 6-16)
+  OpenYU是一款革命性的iOS越狱工具，支持从iOS 6到iOS 16的所有版本！
+  
+  核心特性：
+  • 超宽兼容性：iOS 6.0 - 16.6.1全覆盖
+  • 多架构支持：armv7, arm64, arm64e
+  • 双越狱引擎：支持Substrate和libhooker
+  • 多包管理器：Cydia、Sileo、Zebra
+  
+  支持设备全列表：
+  【经典设备】IPod全系列 Iphone老设备
+  【主流设备】iPhone 5s - iPhone 8 Plus
+  【现代设备】iPhone X - iPhone 14系列
+  【iPad全系】iPad Air 1-5, iPad mini 1-6, iPad Pro全系
+  
+  
+  
+  安全特性：
+  • 代码签名验证
+  • 沙盒逃逸保护
+  • 系统完整性检查
+  • 自动备份/恢复
+  
+  使用注意：
+  1. iOS 6-10设备需要电脑辅助
+  2. iOS 11-14支持无线越狱
+  3. iOS 15-16需要开发者模式
+  4. 建议在设置-通用中关闭自动更新
+  
+ 
+  
+  开源协议：GPLv3
+Tag: purpose::console, role::hacker, compatible::ios6-16
